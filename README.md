@@ -33,20 +33,13 @@ Este código não requer nenhuma biblioteca adicional, além das bibliotecas pad
 |  +--out/
 |   |  +--cartoes/
 |   |   |  +--credito/
-|   |   |   |-- NFe789822.xml
 |   |   |  +--debito/
-|   |   |   |-- NFe789825.xml
-|   |   |   |-- NFe789831.xml
 |   |  +--diferentes/
-|   |   |-- NFe789834.xml
 |   |  +--dinheiro/
-|   |   |-- NFe789821.xml
 |   |  +--outros/
-|   |   |-- NFe789833.xml
 |   |  +--relatorio/
 |   |   |-- Relatorio.txt
 |   |  +--repetidos/
-|   |   |-- NFe789831.xml
 |   |  +--semTag/
 ```
 
