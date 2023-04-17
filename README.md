@@ -15,8 +15,7 @@ Este código não requer nenhuma biblioteca adicional, além das bibliotecas pad
 ```
 +--./
 |-- organizador_nfce.py
-|-- path.py
-|-- README
+|-- README.md
 |  +--.vscode/
 |   |-- settings.json
 |  +--backup/
