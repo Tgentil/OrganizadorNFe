@@ -81,6 +81,12 @@ Total de arquivos - 17754
 
 Se o arquivo não puder ser lido, o código irá pular para o próximo arquivo. Se não for possível mover o arquivo, será lançada uma exceção ArquivoNaoMovido.
 
+## GitKeepers
+
+Este projeto inclui arquivos ".gitkeep" em pastas vazias para garantir que elas sejam mantidas no controle de versão do Git. Esses arquivos são apenas marcadores vazios e não afetam o funcionamento do projeto.
+
+Após clonar o diretório, você pode optar por manter ou remover esses arquivos, dependendo da sua preferência. Se você decidir removê-los, e queira subir alguma sugestão de update certifique-se de que as pastas vazias estejam incluídas em seu arquivo ".gitignore" para evitar que elas sejam adicionadas acidentalmente ao controle de versão.
+
 ## Autor
 
 * Thiago Da Silveira Gentil
