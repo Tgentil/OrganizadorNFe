@@ -16,6 +16,10 @@ Quando a tarefa é concluída, uma mensagem de conclusão é exibida.
 import shutil
 import os
 import xml.etree.ElementTree as ET
+import sys
+
+# Adicionando encoding para evitar erros de caracteres
+sys.stdout.reconfigure(encoding='utf-8')
 
 
 class ArquivoNaoMovido(Exception):
