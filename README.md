@@ -18,17 +18,6 @@ Este código não requer nenhuma biblioteca adicional, além das bibliotecas pad
 |-- README.md
 |  +--.vscode/
 |   |-- settings.json
-|  +--backup/
-|   |  +--out/
-|   |   |  +--cartoes/
-|   |   |   |  +--credito/
-|   |   |   |  +--debito/
-|   |   |  +--diferentes/
-|   |   |  +--dinheiro/
-|   |   |  +--outros/
-|   |   |  +--relatorio/
-|   |   |  +--repetidos/
-|   |   |  +--semTag/
 |  +--data/
 |  +--out/
 |   |  +--cartoes/
@@ -47,7 +36,7 @@ Este código não requer nenhuma biblioteca adicional, além das bibliotecas pad
 
 Para utilizar este código, é necessário colocar os arquivos XML que deseja organizar dentro da pasta `data`. Em seguida, execute o código e os arquivos serão organizados e armazenados na pasta `out`. Um relatório em formato TXT será gerado, mostrando quantos arquivos foram movidos para cada pasta.
 
-Após o uso do código, é recomendável mover a pasta `out` para o local desejado. Para reutilizar o código em outra ocasião, basta copiar a pasta `out` da pasta `backup` dentro da pasta principal. Dessa forma, os arquivos já organizados serão preservados e você poderá continuar trabalhando com a organização dos arquivos XML.
+Após o uso do código, é recomendável mover a pasta `out` para o local desejado. Para reutilizar o código em outra ocasião. Dessa forma, os arquivos já organizados serão preservados e você poderá continuar trabalhando com a organização dos arquivos XML.
 
 ## Uso
 
@@ -80,12 +69,6 @@ Total de arquivos - 17754
 ## Exceptions
 
 Se o arquivo não puder ser lido, o código irá pular para o próximo arquivo. Se não for possível mover o arquivo, será lançada uma exceção ArquivoNaoMovido.
-
-## GitKeepers
-
-Este projeto inclui arquivos ".gitkeep" em pastas vazias para garantir que elas sejam mantidas no controle de versão do Git. Esses arquivos são apenas marcadores vazios e não afetam o funcionamento do projeto.
-
-Após clonar o diretório, você pode optar por manter ou remover esses arquivos, dependendo da sua preferência. Se você decidir removê-los, e queira subir alguma sugestão de update certifique-se de que as pastas vazias estejam incluídas em seu arquivo ".gitignore" para evitar que elas sejam adicionadas acidentalmente ao controle de versão.
 
 ## Autor
 

@@ -21,6 +21,37 @@ import sys
 # Adicionando encoding para evitar erros de caracteres
 sys.stdout.reconfigure(encoding='utf-8')
 
+# Define a pasta raiz
+ROOT_FOLDER = "./out"
+
+# Define uma lista de pastas a serem criadas
+folders_to_create = [
+    "dinheiro",
+    "cartoes/credito",
+    "cartoes/debito",
+    "creditoLoja",
+    "vales",
+    "boletoBancario",
+    "depositoBancario",
+    "pix",
+    "carteiraVirtual",
+    "creditoVirtual",
+    "outros",
+    "diferentes"
+]
+
+# Loop sobre cada pasta a ser criada
+for folder in folders_to_create:
+    # Define o caminho completo da pasta
+    folder_path = os.path.join(ROOT_FOLDER, folder)
+
+    # Cria a pasta se ela não existir
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+
+# Exibe uma mensagem de conclusão quando a tarefa é finalizada
+print("Pastas criadas com sucesso!")
+
 
 class ArquivoNaoMovido(Exception):
     """cria uma exception caso não consiga mover o arquivo"""
@@ -89,6 +120,20 @@ for arquivo in os.listdir(DIRETORIO):
             DESTINO = "./out/cartoes/credito"
         elif tPag == '04':
             DESTINO = "./out/cartoes/debito"
+        elif tPag == '05':
+            DESTINO = "./out/creditoLoja"
+        elif tPag == '10' '11' '12' '13' :
+            DESTINO = "./out/vales"
+        elif tPag == '15':
+            DESTINO = "./out/boletoBancario"
+        elif tPag == '16':
+            DESTINO = "./out/depositoBancario"
+        elif tPag == '17':
+            DESTINO = "./out/pix"
+        elif tPag == '18':
+            DESTINO = "./out/carteiraVirtual"
+        elif tPag == '19':
+            DESTINO = "./out/creditoVirtual"
         elif tPag == '99':
             DESTINO = "./out/outros"
         else:
@@ -145,11 +190,23 @@ if os.path.exists(REPETIDOS_FOLDER) and len(os.listdir(REPETIDOS_FOLDER)) > 0:
             shutil.move(file_path, DATA_FOLDER)
             continue  # continua o código
 
+# Loop pelos diretórios dentro de "out"
+for diretorio in os.listdir("./out"):
+    caminho_diretorio = os.path.join("./out", diretorio)
+    if os.path.isdir(caminho_diretorio) and not os.listdir(caminho_diretorio):
+        # Remove o diretório vazio
+        os.rmdir(caminho_diretorio)
+
+
 # Cria um relatório txt dos arquivos em cada pasta
 ROOT_FOLDER = "./out"
 
 OUTPUT_FOLDER = "./out/relatorio"
 output_file_path = os.path.join(OUTPUT_FOLDER, "contador.txt")
+
+# Cria a pasta "relatorio" se ela ainda não existir
+if not os.path.exists(OUTPUT_FOLDER):
+    os.makedirs(OUTPUT_FOLDER)
 
 # Abre um arquivo de saída para gravar os resultados
 with open(output_file_path, 'w', encoding='utf-8') as output_file:
