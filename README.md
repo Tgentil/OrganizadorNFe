@@ -1,10 +1,10 @@
-# Organizador de arquivos XML
+# Organizador de arquivos NF-Es
 
 Este código é um organizador de arquivos XML que move os arquivos para diferentes diretórios com base em informações contidas nos arquivos XML.
 
 ## Funcionalidade
 
-O código lê arquivos XML em um diretório especificado e, com base em informações dentro do arquivo, move o arquivo para um diretório correspondente. Os arquivos com a tag cAut em seu conteúdo são movidos para um diretório separado dos arquivos sem essa tag. Além disso, os arquivos são movidos para diretórios diferentes dependendo do valor do elemento tPag no arquivo XML. Se o arquivo já existir no diretório de destino, uma mensagem de aviso será exibida. Arquivos que não atendem aos critérios acima são movidos para um diretório de arquivos cancelados e inutilizados. Quando a tarefa é concluída, uma mensagem de conclusão é exibida.
+O código lê NF-Es em arquivos XML dentro do diretório data e, com base em informações dentro do arquivo, move o arquivo para um diretório correspondente. os arquivos são movidos para diretórios diferentes dependendo do valor do elemento tPag no arquivo XML. Se o arquivo já existir no diretório de destino, uma mensagem de aviso será exibida. Arquivos que não atendem aos critérios acima são movidos para um diretório de arquivos cancelados e inutilizados. Quando a tarefa é concluída, uma mensagem de conclusão é exibida.
 
 ## Instalação
 
