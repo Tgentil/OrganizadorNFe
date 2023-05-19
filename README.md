@@ -1,4 +1,4 @@
-# Organizador de arquivos NF-Es
+# Organizador de NF-Es
 
 Este código é um organizador de arquivos XML que move os arquivos para diferentes diretórios com base em informações contidas nos arquivos XML.
 
