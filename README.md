@@ -27,6 +27,13 @@ Este código não requer nenhuma biblioteca adicional, além das bibliotecas pad
 |   |-- sorter.py
 |  +--data/
 |   |-- .gitkeep
+|  +--docs/
+|   |  +--contador_de_parcela/
+|   |   |-- README.md
+|   |  +--parcela_por_mes/
+|   |   |-- README.md
+|   |  +--sorter/
+|   |   |-- README.md
 ```
 
 ## Como utilizar o código
