@@ -69,9 +69,9 @@ Se o arquivo não puder ser lido, o código irá pular para o próximo arquivo. 
 
 # Outros Scripts
 
-1. [contador_de_parcelas.py]("./docs/contador_de_parcela/README.md")
-2. [parcelas_por_mes.py]("./docs/parcela_por_mes/README.md")
-3. [sorter.py]("./docs/sorter/README.md")
+1. [README - Contador de Parcelas](./docs/contador_de_parcela/README.md)
+2. [README - Parcelas por Mês](./docs/parcela_por_mes/README.md)
+3. [README - Sorter](./docs/sorter/README.md)
 
 **Nota:** Antes de utilizar qualquer um dos scripts certifique de ter python instalado em sua máquina.
 

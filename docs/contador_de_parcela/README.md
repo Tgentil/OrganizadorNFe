@@ -27,4 +27,4 @@ Certifique-se de ter as permissões necessárias para leitura e gravação nos d
 
 
 ---
-[**Voltar Para README Principal**]("./README.md")
+[**Voltar Para README Principal**](../../README.md)

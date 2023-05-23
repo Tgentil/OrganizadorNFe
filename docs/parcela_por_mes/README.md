@@ -27,4 +27,4 @@ Certifique-se de ter as permissões necessárias para leitura e gravação nos d
 Em caso da nota não ter data de vencimento ( normalmente notas sem duplicatas )  ele vai contabilizar o mês de emissão como o de pagamento.
 
 ---
-[**Voltar Para README Principal**]("./README.md")
+[**Voltar Para README Principal**](../../README.md)

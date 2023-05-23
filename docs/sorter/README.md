@@ -28,4 +28,4 @@ Certifique-se de ter as permissões necessárias para leitura, gravação e excl
 **Observação:** Certifique-se de entender o código antes de executá-lo para evitar problemas indesejados. Você pode ajustar o tamanho do lote modificando a variável `LOTE_SIZE` no script.
 
 ---
-[**Voltar Para README Principal**]("./README.md")
+[**Voltar Para README Principal**](../../README.md)
