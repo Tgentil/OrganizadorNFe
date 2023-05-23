@@ -15,6 +15,8 @@ DIRETORIO = "./data"
 # Inicializa a contagem total de parcelas
 TOTAL_PARCELAS = 0
 
+# pylint: disable=R0801
+
 # Loop pelos arquivos no diretório
 for arquivo in os.listdir(DIRETORIO):
     if arquivo.endswith('.xml'):  # Verifica se é um arquivo XML

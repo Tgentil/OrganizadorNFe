@@ -63,6 +63,9 @@ for arquivo in os.listdir(DIRETORIO):
         # Obtém o caminho completo do arquivo
         caminho_arquivo = os.path.join(DIRETORIO, arquivo)
 
+# pylint: disable=R0801
+
+
     # Loop pelos arquivos no diretório
 PRIMEIRO_ARQUIVO = True
 for arquivo in os.listdir(DIRETORIO):
