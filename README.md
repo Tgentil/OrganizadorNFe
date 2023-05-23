@@ -14,22 +14,19 @@ Este código não requer nenhuma biblioteca adicional, além das bibliotecas pad
 
 ```
 +--./
-|-- organizador_nfce.py
 |-- README.md
+|  +--.github/
+|   |  +--workflows/
+|   |   |-- pylint.yml
 |  +--.vscode/
 |   |-- settings.json
+|  +--code/
+|   |-- contador_de_parcelas.py
+|   |-- organizador_nfce.py
+|   |-- parcelas_por_mes.py
+|   |-- sorter.py
 |  +--data/
-|  +--out/
-|   |  +--cartoes/
-|   |   |  +--credito/
-|   |   |  +--debito/
-|   |  +--diferentes/
-|   |  +--dinheiro/
-|   |  +--outros/
-|   |  +--relatorio/
-|   |   |-- Relatorio.txt
-|   |  +--repetidos/
-|   |  +--semTag/
+|   |-- .gitkeep
 ```
 
 ## Como utilizar o código
@@ -69,6 +66,14 @@ Total de arquivos - 17754
 ## Exceptions
 
 Se o arquivo não puder ser lido, o código irá pular para o próximo arquivo. Se não for possível mover o arquivo, será lançada uma exceção ArquivoNaoMovido.
+
+# Outros Scripts
+
+1. [contador_de_parcelas.py]("./docs/contador_de_parcela/README.md")
+2. [parcelas_por_mes.py]("./docs/parcela_por_mes/README.md")
+3. [sorter.py]("./docs/sorter/README.md")
+
+**Nota:** Antes de utilizar qualquer um dos scripts certifique de ter python instalado em sua máquina.
 
 ## Autor
 
