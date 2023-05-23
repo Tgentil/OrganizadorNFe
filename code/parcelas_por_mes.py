@@ -59,7 +59,14 @@ with open(RELATORIO, "w", encoding="utf-8") as arquivo_relatorio:
     arquivo_relatorio.write("Relatório de Data de Vencimento das Notas Fiscais\n")
     arquivo_relatorio.write("=============================================\n\n")
 
+    TOTAL_PARCELAS = 0
+
     for mes, quantidade in contador_meses.items():
         arquivo_relatorio.write(f"Mês {mes}: {quantidade} notas fiscais\n")
+        TOTAL_PARCELAS += quantidade
+
+    arquivo_relatorio.write("\n")
+    arquivo_relatorio.write("=============================================\n\n")
+    arquivo_relatorio.write(f"Total de Parcelas: {TOTAL_PARCELAS} notas fiscais\n")
 
 print("Relatório gerado com sucesso.")
