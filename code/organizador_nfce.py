@@ -1,15 +1,11 @@
 """
-Este código é um organizador de arquivos XML. 
-Ele lê arquivos XML em um diretório especificado e,
+Este código é um organizador de arquivos NF-Es. 
+Ele lê NF-Es em XML da pasta data e,
 com base em informações dentro do arquivo, 
 move o arquivo para um diretório correspondente. 
-Os arquivos com a tag "cAut" 
-em seu conteúdo são movidos para um diretório separado dos arquivos sem essa tag.
-Além disso, os arquivos são movidos para diretórios diferentes dependendo do valor 
+Os arquivos são movidos para diretórios diferentes dependendo do valor 
 do elemento "tPag" no arquivo XML. 
 Se o arquivo já existir no diretório de destino, uma mensagem de aviso será exibida.
-Arquivos que não atendem aos critérios acima são movidos para um diretório
-de arquivos cancelados e inutilizados. 
 Quando a tarefa é concluída, uma mensagem de conclusão é exibida.
 
 """
@@ -37,7 +33,8 @@ folders_to_create = [
     "carteiraVirtual",
     "creditoVirtual",
     "outros",
-    "diferentes"
+    "diferentes",
+    "bonificacao"
 ]
 
 # Loop sobre cada pasta a ser criada
@@ -114,7 +111,12 @@ for arquivo in os.listdir(DIRETORIO):
 
         # Verifica o valor do elemento tPag
         tPag = root.find(".//{http://www.portalfiscal.inf.br/nfe}tPag").text
-        if tPag == '01':
+        natOp = root.find(".//{http://www.portalfiscal.inf.br/nfe}natOp").text
+
+
+        if "bonifica" in natOp.lower(): # Verifica se o arquivo é de bonificação
+            DESTINO = "./out/bonificacao"
+        elif tPag == '01':
             DESTINO = "./out/dinheiro"
         elif tPag == '03':
             DESTINO = "./out/cartoes/credito"
