@@ -9,6 +9,8 @@ import sys
 
 sys.stdout.reconfigure(encoding='utf-8')
 
+# pylint: disable=R0801
+
 # Especifica o diretório onde estão os arquivos XML
 DIRETORIO = "./data"
 

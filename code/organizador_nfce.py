@@ -55,6 +55,8 @@ class ArquivoNaoMovido(Exception):
     """cria uma exception caso não consiga mover o arquivo"""
 
 
+# pylint: disable=R0801
+
 # Especifica o diretório onde estão os arquivos XML
 DIRETORIO = "./data"
 
