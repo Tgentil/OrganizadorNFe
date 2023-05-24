@@ -12,6 +12,7 @@ Quando a tarefa é concluída, uma mensagem de conclusão é exibida.
 import shutil
 import os
 import xml.etree.ElementTree as ET
+from collections import defaultdict
 import sys
 
 # Adicionando encoding para evitar erros de caracteres
@@ -57,6 +58,74 @@ class ArquivoNaoMovido(Exception):
 # Especifica o diretório onde estão os arquivos XML
 DIRETORIO = "./data"
 
+# Dicionário para armazenar o contador de notas fiscais por mês
+contador_meses = defaultdict(int)
+
+# Loop pelos arquivos no diretório
+for arquivo in os.listdir(DIRETORIO):
+    if arquivo.endswith('.xml'):  # Verifica se é um arquivo XML
+        # Obtém o caminho completo do arquivo
+        caminho_arquivo = os.path.join(DIRETORIO, arquivo)
+
+        try:
+            # Lê o arquivo XML
+            tree = ET.parse(caminho_arquivo)
+            root = tree.getroot()
+
+            # Obtém todas as tags <dVenc>
+            tags_dvenc = root.findall(
+                ".//{http://www.portalfiscal.inf.br/nfe}dVenc")
+
+            if tags_dvenc:
+                # Verifica se há data de vencimento e extrai o mês
+                for tag_dvenc in tags_dvenc:
+                    data_vencimento = tag_dvenc.text
+                    # Extrai o mês (formato YYYY-MM-DD)
+                    mes_vencimento = data_vencimento[5:7]
+
+                    # Incrementa o contador para o mês correspondente
+                    contador_meses[mes_vencimento] += 1
+            else:
+                # Obtém a tag <dhEmi> para obter a data de emissão
+                tag_dhemi = root.find(
+                    ".//{http://www.portalfiscal.inf.br/nfe}dhEmi")
+
+                if tag_dhemi is not None:
+                    data_emissao = tag_dhemi.text
+                    # Extrai o mês (formato YYYY-MM-DD)
+                    mes_emissao = data_emissao[5:7]
+
+                    # Incrementa o contador para o mês correspondente
+                    contador_meses[mes_emissao] += 1
+
+        except IOError as e:
+            print(f'O arquivo {arquivo} não pôde ser lido: {e}')
+            continue  # Pula para o próximo arquivo
+
+# Cria o relatório em arquivo de texto
+RELATORIO = "relatorio_parcelas.txt"
+
+with open(RELATORIO, "w", encoding="utf-8") as arquivo_relatorio:
+    arquivo_relatorio.write(
+        "Relatório de Data de Vencimento das Notas Fiscais\n")
+    arquivo_relatorio.write(
+        "=============================================\n\n")
+
+    TOTAL_PARCELAS = 0
+
+    for mes, quantidade in contador_meses.items():
+        arquivo_relatorio.write(f"Mês {mes}: {quantidade} notas fiscais\n")
+        TOTAL_PARCELAS += quantidade
+
+    arquivo_relatorio.write("\n")
+    arquivo_relatorio.write(
+        "=============================================\n\n")
+    arquivo_relatorio.write(
+        f"Total de Parcelas: {TOTAL_PARCELAS} notas fiscais\n")
+
+print("Relatório gerado com sucesso.")
+
+
 # Loop pelos arquivos no diretório
 for arquivo in os.listdir(DIRETORIO):
     if arquivo.endswith('.xml'):  # Verifica se é um arquivo XML
@@ -64,7 +133,6 @@ for arquivo in os.listdir(DIRETORIO):
         caminho_arquivo = os.path.join(DIRETORIO, arquivo)
 
 # pylint: disable=R0801
-
 
     # Loop pelos arquivos no diretório
 PRIMEIRO_ARQUIVO = True
@@ -116,8 +184,7 @@ for arquivo in os.listdir(DIRETORIO):
         tPag = root.find(".//{http://www.portalfiscal.inf.br/nfe}tPag").text
         natOp = root.find(".//{http://www.portalfiscal.inf.br/nfe}natOp").text
 
-
-        if "bonifica" in natOp.lower(): # Verifica se o arquivo é de bonificação
+        if "bonifica" in natOp.lower():  # Verifica se o arquivo é de bonificação
             DESTINO = "./out/bonificacao"
         elif tPag == '01':
             DESTINO = "./out/dinheiro"
@@ -127,7 +194,7 @@ for arquivo in os.listdir(DIRETORIO):
             DESTINO = "./out/cartoes/debito"
         elif tPag == '05':
             DESTINO = "./out/creditoLoja"
-        elif tPag == '10' '11' '12' '13' :
+        elif tPag == '10' '11' '12' '13':
             DESTINO = "./out/vales"
         elif tPag == '15':
             DESTINO = "./out/boletoBancario"
@@ -206,7 +273,7 @@ for diretorio in os.listdir("./out"):
 # Cria um relatório txt dos arquivos em cada pasta
 ROOT_FOLDER = "./out"
 
-OUTPUT_FOLDER = "./out/relatorio"
+OUTPUT_FOLDER = "./out/relatorios"
 output_file_path = os.path.join(OUTPUT_FOLDER, "contador.txt")
 
 # Cria a pasta "relatorio" se ela ainda não existir
@@ -224,7 +291,7 @@ with open(output_file_path, 'w', encoding='utf-8') as output_file:
         folder_path = os.path.join(ROOT_FOLDER, folder_name)
 
         # Verifica se o caminho é uma pasta e se a pasta é diferente de "relatorio" e "cartoes"
-        if os.path.isdir(folder_path) and folder_name != "relatorio" and folder_name != "cartoes":
+        if os.path.isdir(folder_path) and folder_name != "relatorios" and folder_name != "cartoes":
             # Escreve o nome da pasta e o número de arquivos no arquivo de saída
             num_files = len(os.listdir(folder_path))
             output_file.write(f"{folder_name} - {num_files}\n")
@@ -232,7 +299,7 @@ with open(output_file_path, 'w', encoding='utf-8') as output_file:
 # Define o caminho da pasta raiz
 ROOT_FOLDER = "./out/cartoes"
 
-OUTPUT_FOLDER = "./out/relatorio"
+OUTPUT_FOLDER = "./out/relatorios"
 output_file_path = os.path.join(OUTPUT_FOLDER, "contadorV2.txt")
 
 # Abre um arquivo de saída para gravar os resultados
@@ -286,9 +353,15 @@ with open(Relatorio_file_path, 'a', encoding='utf-8') as Relatorio_file:
     Relatorio_file.write(
         f"\n------------------------\nTotal de arquivos - {TOTAL_NUM_FILES}\n")
 
+# Move o arquivo de relatório para a pasta de destino
+PASTA_DESTINO = "./out/relatorios"
+caminho_destino = os.path.join(PASTA_DESTINO, RELATORIO)
+
 # Remove os arquivos originais
 os.remove(contador_path)
 os.remove(contadorV2_path)
+
+shutil.move(RELATORIO, caminho_destino)
 
 # Exibe uma mensagem de conclusão quando a tarefa é finalizada
 print("Tarefa concluída!")

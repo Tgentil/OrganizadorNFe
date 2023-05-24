@@ -53,7 +53,7 @@ for arquivo in os.listdir(DIRETORIO):
             continue  # Pula para o próximo arquivo
 
 # Cria o relatório em arquivo de texto
-RELATORIO= "relatorio_vencimentos.txt"
+RELATORIO= "relatorio_parcelas.txt"
 
 with open(RELATORIO, "w", encoding="utf-8") as arquivo_relatorio:
     arquivo_relatorio.write("Relatório de Data de Vencimento das Notas Fiscais\n")
