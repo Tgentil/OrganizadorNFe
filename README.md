@@ -70,6 +70,24 @@ semTag - 0
 Total de arquivos - 17754
 ```
 
+## Exemplo de saída Relatório de Parcelas
+
+```
+
+Relatório de Data de Vencimento das Notas Fiscais
+=============================================
+
+Mês 02: 281 notas fiscais
+Mês 03: 221 notas fiscais 
+Mês 04: 3 notas fiscais
+
+=============================================
+
+Total de Parcelas: 505 notas fiscais
+
+```
+
+
 ## Exceptions
 
 Se o arquivo não puder ser lido, o código irá pular para o próximo arquivo. Se não for possível mover o arquivo, será lançada uma exceção ArquivoNaoMovido.
