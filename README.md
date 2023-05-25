@@ -97,7 +97,7 @@ Se o arquivo não puder ser lido, o código irá pular para o próximo arquivo. 
 
 # Outros Scripts
 
-1. [README - Contador de Parcelas](./docs/contador_de_parcela/README.md)
+1. [README - Achar NF-e por valor](./docs/nfe_finder/README.md)
 2. [README - Parcelas por Mês](./docs/parcela_por_mes/README.md)
 3. [README - Sorter](./docs/sorter/README.md)
 
