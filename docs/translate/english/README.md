@@ -1,6 +1,6 @@
 # NF-E Organizer
-[![Translate](https://img.shields.io/badge/Translate-Portugu%C3%AAs%20%F0%9F%87%A7%F0%9F%87%B7-blue.svg)](../../../README.md)
 
+[![Translate](https://img.shields.io/badge/Translate-Portugu%C3%AAs%20%F0%9F%87%A7%F0%9F%87%B7-blue.svg)](../../../README.md)
 
 This code is an XML file organizer that moves the files to different directories based on the information contained within the XML files.
 
@@ -80,7 +80,7 @@ Invoice Due Date Report
 =============================================
 
 Month 02: 281 invoices
-Month 03: 221 invoices 
+Month 03: 221 invoices
 Month 04: 3 invoices
 
 =============================================
@@ -93,16 +93,16 @@ Total Parcels: 505 invoices
 
 If a file cannot be read, the code will skip to the next file. If it is not possible to move the file, a `FileNotMoved` exception will
 
- be raised.
+be raised.
 
 # Other Scripts
 
-1. [README - Parcel Counter](./docs/parcel_counter/README.md)
-2. [README - Parcels per Month](./docs/parcels_per_month/README.md)
+1. [README - NF-e Finder by value](./docs/nfe_finder/README.md)
+2. [README - Parcels per Month](./docs/parcelas_por_mes/README.md)
 3. [README - Sorter](./docs/sorter/README.md)
 
 **Note:** Before using any of the scripts, make sure you have Python installed on your machine.
 
 ## Author
 
-* Thiago Da Silveira Gentil
+-   Thiago Da Silveira Gentil
