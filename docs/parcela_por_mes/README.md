@@ -16,7 +16,7 @@ python relatorio_vencimentos.py
 
 4. Aguarde até que a execução seja concluída.
 
-5. Após a execução, o script gerará um arquivo de relatório chamado `relatorio_vencimentos.txt` no mesmo diretório do script.
+5. Após a execução, o script gerará um arquivo de relatório chamado `Relatorio_parcelas.txt` no mesmo diretório do script.
 
 6. Abra o arquivo de relatório para ver o resultado. Ele conterá informações sobre a quantidade de notas fiscais por mês, com base nas datas de vencimento das parcelas.
 
