@@ -15,7 +15,7 @@ Este código não requer nenhuma biblioteca adicional, além das bibliotecas pad
 
 ## Estruturação do código
 
-```
+```bash
 +--./
 |-- README.md
 |  +--.github/
