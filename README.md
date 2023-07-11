@@ -1,7 +1,7 @@
 # Organizador de NF-Es
 
 [![Translate](https://img.shields.io/badge/Translate-English%20%F0%9F%8C%8D-blue.svg)](./docs/translate/english/README.md)
-
+[![GitHub](https://img.shields.io/badge/Visit-My%20Profile-0891B2?style=flat-square&logo=github)](https://github.com/Tgentil)
 
 Este código é um organizador de arquivos XML que move os arquivos para diferentes diretórios com base em informações contidas nos arquivos XML.
 
@@ -15,7 +15,7 @@ Este código não requer nenhuma biblioteca adicional, além das bibliotecas pad
 
 ## Estruturação do código
 
-```
+```bash
 +--./
 |-- README.md
 |  +--.github/
