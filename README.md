@@ -24,14 +24,14 @@ Este código não requer nenhuma biblioteca adicional, além das bibliotecas pad
 |  +--.vscode/
 |   |-- settings.json
 |  +--code/
-|   |-- contador_de_parcelas.py
+|   |-- nfe_finder.py
 |   |-- organizador_nfce.py
 |   |-- parcelas_por_mes.py
 |   |-- sorter.py
 |  +--data/
 |   |-- .gitkeep
 |  +--docs/
-|   |  +--contador_de_parcela/
+|   |  +--nfe-finder/
 |   |   |-- README.md
 |   |  +--parcela_por_mes/
 |   |   |-- README.md
