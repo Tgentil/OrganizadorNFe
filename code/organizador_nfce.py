@@ -35,7 +35,9 @@ folders_to_create = [
     "creditoVirtual",
     "outros",
     "diferentes",
-    "bonificacao"
+    "bonificacao",
+    "repetidos",
+    "SemTag"
 ]
 
 # Loop sobre cada pasta a ser criada
