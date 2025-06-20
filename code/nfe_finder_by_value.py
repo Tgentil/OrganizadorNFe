@@ -11,7 +11,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 DIRETORIO = "./data"
 
 # Valor específico a ser procurado na tag <vPag>
-VALOR_PROCURADO = "518.70"  # Coloque aqui o valor que deseja procurar
+VALOR_PROCURADO = "104.24"  # Coloque aqui o valor que deseja procurar
 
 # Variável para controlar se o valor foi encontrado
 VALOR_ENCONTRADO = False
